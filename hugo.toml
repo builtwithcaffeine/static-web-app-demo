@@ -1,0 +1,4 @@
+baseURL = 'https://hugo-demo.az.builtwithcaffeine.cloud'
+languageCode = 'en-us'
+title = 'Simons Blog'
+theme = "bilberry-hugo-theme/v4"
