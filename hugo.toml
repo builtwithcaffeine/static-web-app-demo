@@ -1,4 +1,4 @@
 baseURL = 'https://hugo-demo.az.builtwithcaffeine.cloud'
 languageCode = 'en-us'
 title = 'My Demo Static Web App'
-theme = "bilberry-hugo-theme/v4"
+theme = "hugo-theme-stack"
