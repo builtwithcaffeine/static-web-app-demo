@@ -74,10 +74,13 @@
 
     {{ partial "favicon.html" . }}
 
+    <script src="{{ "modernizr-simple.js" | relURL }}"></script>
+
     {{ with .OutputFormats.Get "RSS" }}
     <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
     <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
     {{end}}
+
 
     {{ with .Params.original_url }}
     <link rel="canonical" href="{{ . }}" />
@@ -85,13 +88,15 @@
     <link rel="canonical" href="{{ .Permalink }}">
     {{ end }}
 
-    {{ if .Site.Params.enableLightDarkTheme | default false }}
-        {{ partial "check-theme-prefer.html" . }}
-    {{ end }}
-
-    {{ partial "css.html" . }}
+    <link rel="stylesheet" href="{{ "theme.css" | absURL }}">
 
     {{ partial "twitter-card.html" . }}
+
+    {{ if isset .Site.Params "css_modules" }}
+        {{ range .Site.Params.css_modules }}
+            <link rel="stylesheet" href="{{ . | absURL }}">
+        {{ end }}
+    {{ end }}
 
     {{ partial "hooks/head-end.html" . }}
 </head>
@@ -112,13 +117,29 @@
     {{ template "_internal/google_analytics.html" . }}
 
     {{ if and (isset .Site.Params "enable_mathjax") (eq .Site.Params.enable_mathjax true) }}
-        {{ partial "mathjax.html" . }}
+    {{ partial "mathjax.html" . }}
     {{ end }}
 
-    {{ partial "js.html" . }}
+    {{- $noMoment    := not (.Site.Params.enableMomentJs    | default true) -}}
+    {{- $noHighlight := not (.Site.Params.enableHighlightJs | default true) -}}
+    {{ if and $noMoment $noHighlight }}
+    <script src="{{ "theme-exclude-moment-and-highlight.js" | absURL }}"></script>
+    {{ else if $noMoment }}
+    <script src="{{ "theme-exclude-moment.js" | absURL }}"></script>
+    {{ else if $noHighlight }}
+    <script src="{{ "theme-exclude-highlight.js" | absURL }}"></script>
+    {{ else }}
+    <script src="{{ "theme.js" | absURL }}"></script>
+    {{ end }}
+
+    {{ if isset .Site.Params "js_modules" }}
+    {{ range .Site.Params.js_modules }}
+    <script src="{{ . | absURL }}" type="application/javascript"></script>
+    {{ end }}
+    {{ end }}
 
     {{ if and (isset .Site.Params "algolia_search") (eq .Site.Params.algolia_search true) }}
-        {{ partial "algolia-search.html" . }}
+    {{ partial "algolia-search.html" . }}
     {{ end }}
 
     {{ partial "hooks/body-end.html" . }}

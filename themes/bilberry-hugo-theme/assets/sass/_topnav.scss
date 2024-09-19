@@ -60,7 +60,8 @@ nav {
                 display: flex;
 
                 &:hover {
-                    color: $bubble-hover-color;
+                    color: inherit;
+                    background-color: lighten($nav-background-color, 10);
                 }
             }
         }
@@ -119,17 +120,12 @@ nav {
                     font-size: 0.75em;
                     text-align: right;
                     padding: 0.5em 1em;
-                    border-radius: 0.5em;
-                    background-color: rgba($page-background-color,0.6);
+                    background-color: $page-background-color;
 
                     img {
                         width: 3.5em;
                         position: relative;
-                        // top: 0.1em;
-                        display: inline-block;
-                        vertical-align: middle;
-                        padding: 0.5em;
-                        background: rgba(#fff,0.5);
+                        top: 0.1em;
                     }
                 }
             }
@@ -143,7 +139,7 @@ nav {
 
                     &:hover,
                     &:focus {
-                        background-color: darken($algolia-search-box-background-color, 5);
+                        background-color: darken($algolia-search-box-background-color, 2);
                     }
 
                     .title {
@@ -202,8 +198,8 @@ nav {
         }
 
         .aa-dropdown-menu {
-            background-color: $algolia-search-box-background-color;
-            border: 1px solid rgba($algolia-border-color, 0.2);
+            background-color: #fff;
+            border: 1px solid rgba($algolia-border-color, 0.6);
             min-width: 300px;
             margin-top: 10px;
             box-sizing: border-box;
@@ -215,12 +211,12 @@ nav {
         }
 
         .aa-suggestion + .aa-suggestion {
-            border-top: 1px solid rgba($algolia-border-color, 0.2);
+            border-top: 1px solid rgba($algolia-border-color, 0.6);
         }
 
         .aa-suggestions-category {
-            border-bottom: 1px solid rgba($algolia-border-color, 0.2);
-            border-top: 1px solid rgba($algolia-border-color, 0.2);
+            border-bottom: 1px solid rgba($algolia-border-color, 0.6);
+            border-top: 1px solid rgba($algolia-border-color, 0.6);
             padding: 6px 12px;
         }
     }

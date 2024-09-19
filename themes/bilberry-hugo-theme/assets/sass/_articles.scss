@@ -11,7 +11,7 @@ article {
         content: "";
         display: block;
         border: 11px solid transparent;
-        border-right-color: $connection-dot-color;
+        border-right-color: #ddd;
         position: absolute;
         top: 49px;
         left: -22px;
@@ -21,7 +21,7 @@ article {
         content: "";
         display: block;
         border: 10px solid transparent;
-        border-right-color: $connection-line-color;
+        border-right-color: #fff;
         position: absolute;
         top: 50px;
         left: -20px;
@@ -151,7 +151,7 @@ article {
                 margin-top: 1.25em;
 
                 li {
-                    border-bottom: 1px solid $footer-border-color;
+                    border-bottom: 1px solid #eee;
                     padding-right: 10px;
                 }
 
@@ -170,7 +170,7 @@ article {
 
                     &:hover {
                         left: 10px;
-                        color: $text-color;
+                        color: $base-color;
                         text-decoration: none;
                     }
                 }
@@ -178,11 +178,11 @@ article {
         }
 
         blockquote {
-            background-color: $blockquote-background-color;
+            background-color: #f6f6f6;
             font-family: $headline-font;
             margin: 1.5em 0;
             padding: 2em;
-            border-left: 0.5em solid rgba(invert($blockquote-background-color),0.2);
+            border-left: 0.5em solid #ededed;
             font-size: 1.05em;
 
             cite {
@@ -226,7 +226,7 @@ article {
 
             li {
                 display: inherit;
-                color: $highlight-color;
+                color: $text-color;
 
                 a {
                     color: inherit;
@@ -234,12 +234,16 @@ article {
                     padding: 0;
 
                     &:hover {
-                        color: $text-color;
+                        color: $highlight-color;
                         background-color: transparent;
                     }
                 }
             }
         }
+    }
+
+    .highlight {
+        margin: 1em 0;
     }
 
     .footer {
@@ -341,7 +345,7 @@ article {
             padding: 5.5%;
             margin: 0;
             text-align: center;
-            color: $header-text-color;
+            color: #fff;
             background: none;
             font-size: 1.2em;
             position: relative;
@@ -442,7 +446,7 @@ article {
         @include featuredImage();
 
         a {
-            color: $header-text-color;
+            color: #fff;
             text-decoration: none;
             display: flex;
             flex-direction: column;
@@ -478,5 +482,4 @@ article {
 #comments-container {
     margin-left: 100px;
     padding-bottom: 1.2em;
-    color: #fff;
 }
