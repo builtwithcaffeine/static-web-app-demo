@@ -1,9 +1,0 @@
-[submodule "themes/bilberry-hugo-theme"]
-	path = themes/bilberry-hugo-theme
-	url = https://github.com/Lednerb/bilberry-hugo-theme.git
-[submodule "themes/bilberry-hugo-them"]
-	path = themes/bilberry-hugo-them
-	url = https://github.com/Lednerb/bilberry-hugo-theme.git
-[submodule "themes/hugo-theme-stack"]
-	path = themes/hugo-theme-stack
-	url = https://github.com/CaiJimmy/hugo-theme-stack/

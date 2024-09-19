@@ -1,4 +1,3 @@
-baseURL = 'https://hugo-demo.az.builtwithcaffeine.cloud'
+baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My Demo Static Web App'
-theme = "hugo-theme-stack"
+title = 'My New Hugo Site'
