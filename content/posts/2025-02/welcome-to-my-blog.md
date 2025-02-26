@@ -4,4 +4,4 @@ draft = false
 title = 'Welcome to My Blog'
 +++
 
-# Hello World, I'm Simon
+# Hello World, I'm Simon!
